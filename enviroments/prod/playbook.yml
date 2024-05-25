@@ -9,23 +9,16 @@
 
     - name: Create directory for static content
       file:
-        path: /var/www/html/andresinho20049
+        path: /var/www/html/patinha
         state: directory
         mode: 0755
 
     - name: Git Clone
       git:
         repo: https://github.com/andresinho20049/adote-uma-patinha.git
-        dest: /var/www/html/
-        version: master
+        dest: /var/www/html/patinha
+        version: team
         force: yes
-        
-    # - name: Copy "index.html" to default Nginx location
-    #   copy:
-    #     src: /var/www/html/andresinho20049/index.html
-    #     dest: /var/www/html/index.html
-    #     mode: 0644
-    #     remote_src: true
 
     - name: Enable default Nginx website
       file:
@@ -40,4 +33,3 @@
 
     - name: Echo
       shell: 'cd /home/ubuntu; echo "Shell executado" > text.txt'
-
