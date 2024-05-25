@@ -1,5 +1,5 @@
 resource "aws_security_group" "security_group_global" {
-  name = "security_group_terraform"
+  name = "security_group_terraform_${var.enviroment_team}"
   description = "Security Group for Test Terraform"
   ingress{
     cidr_blocks = ["0.0.0.0/0"]
@@ -16,6 +16,6 @@ resource "aws_security_group" "security_group_global" {
     protocol = "-1"
   }
   tags = {
-    Name = "security_group_terraform"
+    Name = "security_group_terraform_${var.enviroment_team}"
   }
 }
