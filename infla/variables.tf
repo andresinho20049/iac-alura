@@ -11,3 +11,15 @@ variable "enviroment_team" {
   type = string
   description = "Enviroment of team, example Prod, Development, QA"
 }
+
+variable "group_name" {
+  type = string
+}
+
+variable "group_max" {
+  type = number
+}
+
+variable "group_min" {
+  type = number
+}
