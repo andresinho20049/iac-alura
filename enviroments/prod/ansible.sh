@@ -1,8 +1,9 @@
 #!/bin/bash
 cd /home/ubuntu
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-sudo python3 get-pip.py
-sudo python3 -m pip install ansible
+sudo apt update -y
+sudo apt install software-properties-common -y
+sudo add-apt-repository --yes --update ppa:ansible/ansible
+sudo apt install ansible -y
 
 # Download playbook on repo
 curl https://raw.githubusercontent.com/andresinho20049/iac-alura/escalability/enviroments/prod/playbook.yml -o playbook.yml
