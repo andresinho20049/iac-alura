@@ -20,6 +20,8 @@ resource "aws_launch_template" "instance_template" {
   instance_type = var.instance_t
   key_name      = "iac_alura"
 
+  user_data = filebase64("ansible.sh")
+
   tags = {
     Name = "Aws templante ${var.enviroment_team}"
   }
